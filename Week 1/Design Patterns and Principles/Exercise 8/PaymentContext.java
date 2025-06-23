@@ -1,0 +1,16 @@
+// File: PaymentContext.java
+public class PaymentContext {
+    private PaymentStrategy strategy;
+
+    public void setPaymentStrategy(PaymentStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void makePayment(double amount) {
+        if (strategy == null) {
+            System.out.println("No payment method selected.");
+            return;
+        }
+        strategy.pay(amount);
+    }
+}
